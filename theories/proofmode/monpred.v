@@ -158,13 +158,13 @@ Proof.
   apply  bi.intuitionistically_if_elim.
 Qed.
 
-Global Instance from_assumption_make_monPred_objectively P Q :
+Global Instance from_assumption_make_monPred_objectively P Q {p} :
   FromAssumption p P Q → KnownLFromAssumption p (<obj> P) Q.
 Proof.
   intros ?.
   by rewrite /KnownLFromAssumption /FromAssumption monPred_objectively_elim.
 Qed.
-Global Instance from_assumption_make_monPred_subjectively P Q :
+Global Instance from_assumption_make_monPred_subjectively P Q {p} :
   FromAssumption p P Q → KnownRFromAssumption p P (<subj> Q).
 Proof.
   intros ?.
